@@ -2,7 +2,7 @@ import LogoU from "../assets/logoUPB.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-orange-950 text-white py-6">
+    <footer className=" bg-linear-65 from-purple-500 to-orange-500 text-white py-6">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
         {/* Logo UPB */}
         <div className="flex justify-center md:justify-start">
