@@ -7,17 +7,17 @@ export default function Navbar() {
             </div>
 
           <div className="flex justify-center items-center  size-14 grow-7">
-            <a href="#inicio" className="transition  rounded-xl px-4 py-1 hover:bg-green-950">
+            <a href="#inicio" className="transition  rounded-xl px-4 py-1 hover:bg-orange-500">
               Inicio
             </a>
-            <a href="#historia" className="transition  rounded-xl px-4 py-1 hover:bg-green-950">
+            <a href="#historia" className="transition  rounded-xl px-4 py-1 hover:bg-orange-500">
               Historia
             </a>
-            <a href="#galeria" className="transition  rounded-xl px-4 py-1 hover:bg-green-950">
+            <a href="#galeria" className="transition  rounded-xl px-4 py-1 hover:bg-orange-500">
               Galería
             </a>
-            <a href="#contacto" className="transition  rounded-xl px-4 py-1 hover:bg-green-950">
-              Contacto
+            <a href="#contacto" className="transition  rounded-xl px-4 py-1 hover:bg-orange-500">
+              Making off
             </a>
           </div>
 
