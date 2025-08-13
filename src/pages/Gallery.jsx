@@ -9,77 +9,120 @@ export default function Gallery() {
     {
       image: Img1,
       title: "Puente de Occidente",
-      description: "Uno de los íconos arquitectónicos de Santa Fe de Antioquia, construido en 1895.",
+      description:
+        "Uno de los íconos arquitectónicos de Santa Fe de Antioquia, construido en 1895.",
     },
     {
       image: Img2,
       title: "Calle Colonial",
-      description: "Calles empedradas rodeadas de casas coloniales con balcones de madera.",
+      description:
+        "Calles empedradas rodeadas de casas coloniales con balcones de madera.",
     },
     {
       image: Img3,
       title: "Catedral Basílica",
-      description: "Imponente templo con arquitectura colonial en el corazón del municipio.",
+      description:
+        "Imponente templo con arquitectura colonial en el corazón del municipio.",
     },
     {
       image: Img4,
       title: "Plaza Mayor",
-      description: "Centro histórico donde se reúnen locales y turistas a disfrutar del ambiente.",
+      description:
+        "Centro histórico donde se reúnen locales y turistas a disfrutar del ambiente.",
     },
   ];
 
-  const [current, setCurrent] = useState(0);
+  // 👇 Renombrado a 'active' para evitar confusiones con 'current'
+  const [active, setActive] = useState(0);
 
   const nextSlide = () => {
-    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    setActive((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setActive((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
+
+  // Índices vecino izquierdo y derecho
+  const leftIndex = (active - 1 + slides.length) % slides.length;
+  const rightIndex = (active + 1) % slides.length;
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] py-10 px-5 flex flex-col items-center">
-      <h2 className="text-white text-4xl font-bold text-center mb-8 animate-fade-slide-down relative">Galería</h2>
+      {/* Título con animación suave */}
+      <h2 className="text-white text-4xl font-bold text-center mb-8 animate-fade-slide-down relative">
+        Galería
+      </h2>
+
+      {/* Carrusel */}
       <div className="relative flex items-center justify-center w-full max-w-5xl h-[350px] mb-8">
         {/* Flecha Izquierda */}
-        <button onClick={prevSlide} className="absolute left-0 z-10 text-white text-3xl bg-black/40 hover:bg-black/60 px-3 py-1 rounded-full transition">
+        <button
+          onClick={prevSlide}
+          className="absolute left-0 z-10 text-white text-3xl bg-black/40 hover:bg-black/60 px-3 py-1 rounded-full transition"
+          aria-label="Anterior"
+        >
           ❮
         </button>
 
-        {/* Carrusel */}
-        <div className="flex justify-center items-center w-full h-full overflow-hidden relative">
-          {slides.map((slide, index) => {
-            let isActive = index === current;
-            let isPrev = index === (current - 1 + slides.length) % slides.length;
-            let isNext = index === (current + 1) % slides.length;
+        <div className="relative flex justify-center items-center w-full h-full overflow-hidden">
+          {slides.map((slide, i) => {
+            const isActive = i === active;
+            const isLeft = i === leftIndex;
+            const isRight = i === rightIndex;
+
+            // Estado visual por posición
+            const base =
+              "absolute rounded-xl shadow-lg transition-all duration-700 ease-in-out";
+            const visual = isActive
+              ? "opacity-100 scale-100 z-20"
+              : "opacity-40 scale-90 z-10";
+
+            // Posiciones: centro / izquierda / derecha / fuera de escena
+            let translateX = "1000px";
+            if (isActive) translateX = "0px";
+            else if (isLeft) translateX = "-250px";
+            else if (isRight) translateX = "250px";
+
+            const w = isActive ? 500 : 350;
+            const h = isActive ? 300 : 220;
 
             return (
               <div
-                key={index}
-                className={`absolute transition-all duration-700 ease-in-out rounded-xl shadow-lg ${isActive ? "scale-100 opacity-100 z-20" : "scale-90 opacity-40 z-10"}`}
+                key={i}
+                className={`${base} ${visual}`}
                 style={{
-                  width: isActive ? "500px" : "350px",
-                  height: isActive ? "300px" : "220px",
-                  transform: isActive ? "translateX(0)" : isPrev ? "translateX(-250px)" : isNext ? "translateX(250px)" : "translateX(1000px)",
+                  width: `${w}px`,
+                  height: `${h}px`,
+                  transform: `translateX(${translateX})`,
                 }}
               >
-                <img src={slide.image} alt={slide.title} className="w-full h-full object-cover rounded-xl" />
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="w-full h-full object-cover rounded-xl"
+                />
               </div>
             );
           })}
         </div>
 
         {/* Flecha Derecha */}
-        <button onClick={nextSlide} className="absolute right-0 z-10 text-white text-3xl bg-black/40 hover:bg-black/60 px-3 py-1 rounded-full transition">
+        <button
+          onClick={nextSlide}
+          className="absolute right-0 z-10 text-white text-3xl bg-black/40 hover:bg-black/60 px-3 py-1 rounded-full transition"
+          aria-label="Siguiente"
+        >
           ❯
         </button>
       </div>
 
-      {/* Texto Descriptivo */}
+      {/* Texto Descriptivo (separado del carrusel para que no se superponga) */}
       <div className="text-center max-w-xl">
-        <h3 className="text-white text-2xl font-semibold">{slides[current].title}</h3>
-        <p className="text-gray-300 mt-2">{slides[current].description}</p>
+        <h3 className="text-white text-2xl font-semibold">
+          {slides[active].title}
+        </h3>
+        <p className="text-gray-300 mt-2">{slides[active].description}</p>
       </div>
     </section>
   );

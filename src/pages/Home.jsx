@@ -2,6 +2,7 @@ import Fondo from "../assets/fondoHome.jpg";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import Gallery from "../pages/Gallery";
+import Timeline from "../components/timeline";
 
 export default function Home() {
   return (
@@ -23,6 +24,9 @@ export default function Home() {
 
       <section id="gallery">
         <Gallery />
+      </section>
+      <section id="history">
+        <Timeline />
       </section>
 
       <Footer />
