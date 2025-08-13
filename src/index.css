@@ -10,10 +10,13 @@
   }
 }
 
+.animate-slideDownFade {
+  animation: slideDownFade 0.6s ease-out;
+}
+
 * {
   font-family: "Mozilla Headline", sans-serif;
 }
-
-.animate-slideDownFade {
-  animation: slideDownFade 0.6s ease-out;
+html {
+  scroll-behavior: smooth;
 }
