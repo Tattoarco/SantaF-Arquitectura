@@ -75,11 +75,9 @@ export default function Timeline() {
         ))}
       </div>
 
-      <div className="flex justify-center items-center">
-        <Link to="/History" className="text-white text-2xl hover:text-yellow-500 hover:scale-105 transition">
-          Ver más...
-        </Link>
-      </div>
+      <Link to="/History" className="text-white text-2xl hover:text-[#0f172a] hover:scale-105 transition">
+        <div className="flex justify-center items-center rounded-xl bg-indigo-500 shadow-lg shadow-indigo-500/50 active:scale-90 hover:scale-[101%]">Ver más...</div>
+      </Link>
     </section>
   );
 }
