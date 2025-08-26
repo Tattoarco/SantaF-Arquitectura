@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import img1 from "../assets/TimelineImg/fundacion.jpg"
 
 const timelineData = [
   {
@@ -10,13 +11,13 @@ const timelineData = [
       "1555: La Villa de Santafé de Antioquia se convierte en capital de la provincia, consolidándose como centro administrativo y religioso",
       "1656: Un rayo destruye el primer templo parroquial.",
     ],
-    image: "/assets/timeline/fundacion.jpg",
+    image: img1
   },
   {
     period: "1659–1700",
     title: "Segunda parroquia y crecimiento religioso",
     events: ["1659: Se edifica un nuevo templo parroquial de tapias y tejas, que luego será demolido para dar paso a la Catedral actual", "El estilo de estas construcciones era predominantemente colonial español: muros de adobe, tejas de barro, estructuras simples"],
-    image: "/assets/timeline/segunda-parroquia.jpg",
+    image: "/assets/TimelineImg/fundacion.jpg",
   },
   {
     period: "Siglo XVIII",
@@ -47,7 +48,7 @@ export default function Timeline() {
 
       <div className="relative max-w-5xl mx-auto">
         {/* Línea central */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-700 h-full"></div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-700 SHA   h-full"></div>
 
         {timelineData.map((item, index) => (
           <div key={index} className={`mb-12 flex items-center w-full ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>

@@ -17,7 +17,7 @@ export default function Home() {
         setTimeout(() => {
           const offset = element.getBoundingClientRect().top + window.scrollY - 80;
           window.scrollTo({ top: offset, behavior: "smooth" });
-        }, 200); // espera para que se renderice todo
+        }, 200); 
       }
     }
   }, [location.state]);
@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <section>
       {/* Fondo */}
-      <img src={Fondo} alt="Fondo" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={Fondo} alt="Fondo" className="absolute inset-0 w-full h-screen object-cover" />
       {/* Capa oscura */}
       <div className="absolute inset-0 bg-[#00000078]"></div>
       {/* Degradado inferior */}

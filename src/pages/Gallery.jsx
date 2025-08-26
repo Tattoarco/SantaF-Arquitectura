@@ -48,7 +48,7 @@ export default function Gallery() {
   const rightIndex = (active + 1) % slides.length;
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] py-10 px-5 flex flex-col items-center">
+    <section className="h-screen bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] py-10 px-5 flex flex-col items-center justify-center">
       {/* Título con animación suave */}
       <h2 className="text-white text-4xl font-bold text-center mb-8 animate-slideDownFade  relative">
         Galería
