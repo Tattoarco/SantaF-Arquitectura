@@ -3,8 +3,9 @@ import { useLocation } from "react-router-dom";
 import Fondo from "../assets/fondoHome.jpg";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+  import Timeline from "../components/timeline";
 import Gallery from "../pages/Gallery";
-import Timeline from "../components/timeline";
+import MakingOf from "../pages/MakingOff";
 
 export default function Home() {
   const location = useLocation();
@@ -17,7 +18,7 @@ export default function Home() {
         setTimeout(() => {
           const offset = element.getBoundingClientRect().top + window.scrollY - 80;
           window.scrollTo({ top: offset, behavior: "smooth" });
-        }, 200); 
+        }, 200);
       }
     }
   }, [location.state]);
@@ -39,18 +40,16 @@ export default function Home() {
         <h2 className="text-3xl opacity-0 translate-y-10 animate-fadeUp delay-200">Explora con nosotros sobre Santa Fé de Antioquia.</h2>
       </div>
 
-      <section id="gallery">
+      <section id="gallery" className="h-screen">
         <Gallery />
       </section>
 
-      <div className="absolute bg-gray-700 left-1/2 w-[90%] h-1 transform -translate-x-1/2"></div>
-
-      <section id="history">
+      <section id="history"  >
         <Timeline />
       </section>
 
-      <section id="makingOff" className="h-screen bg-blue-800 text-white flex items-center justify-center">
-        Making off
+      <section id="makingOff" className="h-screen">
+        <MakingOf/>
       </section>
 
       <Footer />
