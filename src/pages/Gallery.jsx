@@ -79,13 +79,13 @@ export default function Gallery() {
         {/* Botones */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 z-10"
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-black/70 text-white rounded-full p-2 z-10"
         >
           <ChevronLeft size={22} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 z-10"
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-black/70 text-white rounded-full p-2 z-10"
         >
           <ChevronRight size={22} />
         </button>

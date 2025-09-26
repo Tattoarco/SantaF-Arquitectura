@@ -24,13 +24,13 @@ export default function Home() {
   }, [location.state]);
 
   return (
-    <section>
+    <section className="bg-slate-900">
       {/* Fondo */}
-      <img src={Fondo} alt="Fondo" className="absolute inset-0 w-full h-screen object-cover" />
+      <img src={Fondo} alt="Fondo" className="absolute inset-0 w-full h-screen object-cover bg-slate-900" />
       {/* Capa oscura */}
-      <div className="absolute inset-0 bg-[#00000078]"></div>
+      <div className="absolute h-screen inset-0 bg-[#00000078]"></div>
       {/* Degradado inferior */}
-      <div className="gradient-bottom absolute bottom-0 w-full h-[20rem] bg-gradient-to-t from-[#0f172a] to-[#0f172a09]"></div>
+      <div className="gradient-bottom absolute bottom-0 w-full h-[15rem] bg-gradient-to-t from-[#0f172a] to-[#0f172a09]"></div>
 
       <Navbar />
 
