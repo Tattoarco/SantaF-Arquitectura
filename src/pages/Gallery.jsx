@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { useState} from "react";
+import { motion} from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import img1 from "../assets/ImgGallery/img1.jpg";
@@ -49,16 +49,16 @@ export default function Gallery() {
         <motion.div
           className="flex"
           animate={{ x: `-${current * 50}%` }} // 
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1, ease: "easeOut" }}
           style={{ width: `${slidesCount * 100}%` }}
         >
           {images.map((img, idx) => (
             <div
               key={idx}
-              className="w-1/4 flex-shrink-0 flex flex-col items-center px-3" // 
+              className="w-1/4 flex-shrink-0 flex flex-col items-center px-3" 
             >
               <div className="w-full h-100 rounded-xl relative overflow-hidden">
-                <div className="absolute inset-0 rounded-xl p-[2px] bg-gradient-to-r from-pink-500 via-yellow-500 to-blue-500 animate-gradient-x">
+                <div className="absolute inset-0 rounded-xl p-[2px] bg-gradient-to-r from-pink-500 via-yellow-500 to-blue-500 animate-gradient-x ">
                   <div className="w-full h-full rounded-xl overflow-hidden flex flex-col">
                     <img
                       src={img.src}
