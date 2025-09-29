@@ -1,6 +1,6 @@
 export default function MakingOff() {
   return (
-    <section className="min-h-screen bg-[#0a0f1c] text-white flex flex-col items-center justify-center px-4 py-16">
+    <section className="max-h-screen bg-[#0a0f1c] text-white flex flex-col items-center justify-center px-4 py-16">
       <h2 className="text-4xl md:text-5xl font-bold mb-12 tracking-wider text-center">
         Making Off
       </h2>

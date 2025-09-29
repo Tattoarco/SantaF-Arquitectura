@@ -2,7 +2,7 @@ import Logo from "/logo.jpg";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-white py-12 overflow-hidden">
+    <footer className="relative bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-white py-5 overflow-hidden">
       {/* Overlay degradado sutil */}
       <div className="absolute inset-0 bg-black/30" />
 
