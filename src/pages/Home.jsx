@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import Gallery from "../pages/Gallery";
 import Navbar from "../components/navbar";
 
-import papel from "../assets/papel.png";
+// import papel from "../assets/papel.png";
 import imgInicio from "../assets/fondoHome.jpg";
 import fondo from "../assets/principal.jpg";
 
@@ -69,7 +69,7 @@ export default function Home() {
 
       <div className="relative bg-slate-950 px-6 md:px-40 lg:px-45 flex flex-col  text-justify py-16">
         {/* Imagen de fondo */}
-        <img src={papel} alt="textura de papel" className="absolute inset-0 w-full h-full object-cover z-0 opacity-80" />
+        {/* <img src={papel} alt="textura de papel" className="absolute inset-0 w-full h-full object-cover z-0 opacity-80" /> */}
 
         {/* Contenido encima */}
         <div className="relative z-10  text-white font-extralight bg-black/55 p-10 rounded-2xl">
