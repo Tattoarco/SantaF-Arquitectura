@@ -4,9 +4,9 @@ import Footer from "../components/footer";
 import Gallery from "../pages/Gallery";
 import Navbar from "../components/navbar";
 
-import Papel from "../assets/papel.png";
-import ImgInicio from "../assets/fondoHome.jpg";
-import Fondo from "../assets/principal.jpg";
+import papel from "../assets/papel.png";
+import imgInicio from "../assets/fondoHome.jpg";
+import fondo from "../assets/principal.jpg";
 
 export default function Home() {
   const [showMore, setShowMore] = useState(false);
@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <section className="bg-slate-900">
       {/* Fondo */}
-      <img src={Fondo} alt="Fondo" className="absolute inset-0 w-full h-screen object-cover bg-slate-900" />
+      <img src={fondo} alt="Fondo" className="absolute inset-0 w-full h-screen object-cover bg-slate-900" />
       {/* Capa oscura */}
       <div className="absolute h-screen inset-0 bg-[#00000078]"></div>
       {/* Degradado inferior */}
@@ -48,7 +48,7 @@ export default function Home() {
         {/* Imagen con borde degradado */}
         <div className="relative flex justify-center group">
           <div className="w-full md:w-full p-[3px] rounded-xl bg-gradient-to-r from-[#c9a227] via-[#c40909] to-[#c9a227] shadow-[0_0_40px_rgba(0,0,0,0.6)] animate-gradient-x">
-            <img src={ImgInicio} alt="casa colonial Santa Fe de Antioquia" className="rounded-lg object-cover w-full h-full" />
+            <img src={imgInicio} alt="casa colonial Santa Fe de Antioquia" className="rounded-lg object-cover w-full h-full" />
           </div>
 
           {/* Tooltip */}
@@ -69,7 +69,7 @@ export default function Home() {
 
       <div className="relative bg-slate-950 px-6 md:px-40 lg:px-45 flex flex-col  text-justify py-16">
         {/* Imagen de fondo */}
-        <img src={Papel} alt="textura de papel" className="absolute inset-0 w-full h-full object-cover z-0 opacity-80" />
+        <img src={papel} alt="textura de papel" className="absolute inset-0 w-full h-full object-cover z-0 opacity-80" />
 
         {/* Contenido encima */}
         <div className="relative z-10  text-white font-extralight bg-black/55 p-10 rounded-2xl">
