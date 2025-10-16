@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { hover, motion } from "framer-motion";
 import img1 from "../assets/TimelineImg/fundacion.jpg";
 import img2 from "../assets/TimelineImg/IglesiaJesusNazareno_1.png";
@@ -40,7 +39,7 @@ const timelineData = [
     period: "Siglo XIX",
     title: "Nuevos templos y expansión vial",
     events: ["1863: Comienza la construcción del Templo de Nuestra Señora de Chiquinquirá, conocido como La Chinca.", "1895: Se inaugura el Puente de Occidente, diseñado por el ingeniero José María Villa, discípulo de Eiffel. Es una de las mayores obras de ingeniería del siglo XIX en Colombia."],
-    image: img5 ,
+    image: img5,
   },
 ];
 
@@ -49,30 +48,16 @@ export default function Timeline() {
 
   return (
     <>
-      {/* Wave en la parte superior */}
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute z-10">
-        <path
-          fill="url(#waveGradient)"
-          fillOpacity="1"
-          d="M0,256L21.8,229.3C43.6,203,87,149,131,122.7C174.5,96,218,96,262,90.7C305.5,85,349,75,393,85.3C436.4,96,480,128,524,160C567.3,192,611,224,655,208C698.2,192,742,128,785,122.7C829.1,117,873,171,916,208C960,245,1004,267,1047,277.3C1090.9,288,1135,288,1178,272C1221.8,256,1265,224,1309,208C1352.7,192,1396,192,1418,192L1440,192L1440,0L1418.2,0C1396.4,0,1353,0,1309,0C1265.5,0,1222,0,1178,0C1134.5,0,1091,0,1047,0C1003.6,0,960,0,916,0C872.7,0,829,0,785,0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,131,0C87.3,0,44,0,22,0L0,0Z"
-        ></path>
-        <defs>
-          <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#0f172b" />
-            <stop offset="100%" stopColor="#1e293b" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <section className="min-h-screen bg-[#0a0f1c] relative overflow-hidden">
+      <section className="  relative overflow-hidden">
         {/* Título animado */}
-        <motion.h2 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }} className="relative text-white text-4xl md:text-5xl font-bold text-center mb-16 tracking-wide z-10 pt-36">
-          Línea de Tiempo 
+        <motion.h2 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }} className="relative text-white text-xl md:text-3xl font-bold text-center mb-10 tracking-wide z-10 pt-10">
+          Línea de Tiempo
         </motion.h2>
 
         <div className="relative max-w-6xl mx-auto">
           {/* Línea central con gradiente animado */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full">
-            <div className="w-full h-full bg-gradient-to-b from-pink-500 via-yellow-400 to-blue-500 animate-gradient-y"></div>
+            <div className="w-full h-full bg-gradient-to-b from-amber-100 via-orange-400 to-blue-500 animate-gradient-y"></div>
           </div>
 
           {timelineData.map((item, index) => (
@@ -110,10 +95,6 @@ export default function Timeline() {
             </div>
           ))}
         </div>
-
-        <Link to="/History" className="block text-center text-white text-2xl hover:text-[#0f172a] transition mb-10">
-          <div className="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-indigo-500 shadow-lg shadow-indigo-500/50 active:scale-90 hover:scale-105">Ver más...</div>
-        </Link>
       </section>
     </>
   );

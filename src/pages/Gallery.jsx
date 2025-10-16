@@ -32,20 +32,16 @@ const images = [
 
 export default function Gallery() {
   const [current, setCurrent] = useState(0);
-  const slidesCount = Math.ceil(images.length / 2); // 2 imágenes por slide
+  const slidesCount = Math.ceil(images.length / 3 ); // 2 imágenes por slide
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slidesCount);
   const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + slidesCount) % slidesCount);
 
   return (
-    <section className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center px-4 py-16 relative overflow-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold mb-12 tracking-wider text-center">
-        Galería
-      </h2>
-
+    <section>
       {/* Carrusel */}
-      <div className="relative w-full max-w-6xl overflow-hidden">
+      <div className="relative w-full overflow-hidden">
         <motion.div
           className="flex"
           animate={{ x: `-${current * 50}%` }} // 
@@ -59,11 +55,11 @@ export default function Gallery() {
             >
               <div className="w-full h-100 rounded-xl relative overflow-hidden">
                 <div className="absolute inset-0 rounded-xl p-[2px] bg-gradient-to-r from-pink-500 via-yellow-500 to-blue-500 animate-gradient-x ">
-                  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col">
+                  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col text-white">
                     <img
                       src={img.src}
                       alt={img.title}
-                      className="w-full h-3/4 object-cover"
+                      className="w-full h-3/4 object-cover "
                     />
                     <div className="p-3 h-1/4 flex flex-col justify-center bg-black/60">
                       <h3 className="text-lg font-semibold">{img.title}</h3>
