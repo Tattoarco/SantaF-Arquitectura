@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import Gallery from "../pages/Gallery";
 import Navbar from "../components/navbar";
 
-import papel from "../assets/papel.png";
+import papel from "../assets/casaHome.PNG";
 import imgInicio from "../assets/fondoHome.jpg";
 import fondo from "../assets/principal.jpg";
 
