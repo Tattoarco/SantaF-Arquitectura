@@ -6,9 +6,9 @@ import TimeLine from "../components/timeline";
 import Card from "../components/cards";
 
 import Periodico from "../assets/periodico.jpg";
-import CasaBareque from "../assets/ImgHistory/CasaBareque.jpg"
-import CasaDecoraciones from "../assets/ImgHistory/CasaDecoraciones.jpg"
-import CasaMadera from "../assets/ImgHistory/CasaMadera.jpg"
+import CasaBareque from "../assets/ImgHistory/CasaBareque.JPG"
+import CasaDecoraciones from "../assets/ImgHistory/CasaDecoraciones.JPG"
+import CasaMadera from "../assets/ImgHistory/CasaMadera.JPG"
 
 export default function History() {
   return (
