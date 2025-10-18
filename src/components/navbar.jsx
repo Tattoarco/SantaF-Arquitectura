@@ -7,16 +7,14 @@ export default function Navbar() {
   const location = useLocation();
   const [open, setOpen] = useState(false);
 
-  // Componente NavItem simplificado (solo navegación)
   const NavItem = ({ to, children }) => {
     const isActive = location.pathname === to;
-
     return (
       <Link
         to={to}
         onClick={() => setOpen(false)}
-        className={`transition rounded-3xl px-4 py-1 hover:bg-[#ffffff4d] hover:scale-110 ${
-          isActive ? "bg-[#ffffff2d]" : ""
+        className={`transition rounded-3xl px-4 py-1 hover:bg-[#ffffff2b] hover:scale-110 ${
+          isActive ? "bg-[#ffffff30]" : ""
         }`}
       >
         {children}
@@ -25,14 +23,17 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50">
-      <div className="h-20 flex items-center justify-between px-6 text-white">
+    <nav className="fixed top-0 left-0 w-full z-50 text-white">
+      <div className="h-20 flex items-center justify-between px-6 md:px-10">
         {/* Logo */}
-        <div className="font-bold text-xl">Santa Fé</div>
+        <div className="flex items-center gap-2 text-amber-400 font-bold text-2xl tracking-widest">
+          <i className="fa-solid fa-landmark text-amber-500"></i>
+          Santa Fé
+        </div>
 
         {/* Menú desktop */}
         <div className="hidden md:flex flex-1 justify-center">
-          <div className="flex gap-6 border border-amber-50 rounded-full px-6 py-2">
+          <div className="flex gap-8 px-6 py-2 border border-amber-300/40 rounded-full bg-transparent backdrop-blur-0">
             <NavItem to="/">Inicio</NavItem>
             <NavItem to="/History">Historia</NavItem>
             <NavItem to="/Proyecto">Proyecto</NavItem>
@@ -40,10 +41,12 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Ejemplo de texto u otro botón */}
-        <div>Holaaaa</div>
+        {/* Ícono decorativo o botón */}
+        <div className="text-amber-400">
+          <i className="fa-solid fa-church text-lg"></i>
+        </div>
 
-        {/* Botón hamburguesa mobile */}
+        {/* Menú móvil */}
         <div className="md:hidden">
           <button onClick={() => setOpen(!open)} aria-label="menu">
             {open ? <X size={28} /> : <Menu size={28} />}
@@ -51,11 +54,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menú móvil (overlay + panel) */}
+      {/* Menú móvil lateral */}
       <AnimatePresence>
         {open && (
           <>
-            {/* Fondo oscuro */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.5 }}
@@ -63,14 +65,12 @@ export default function Navbar() {
               className="fixed inset-0 bg-black z-40"
               onClick={() => setOpen(false)}
             />
-
-            {/* Panel lateral */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 80 }}
-              className="fixed top-0 right-0 w-64 h-full bg-[#070000b1] text-white shadow-2xl p-6 flex flex-col items-center justify-center gap-6 z-50"
+              className="fixed top-0 right-0 w-64 h-full bg-[#0a0a0aa9] text-white shadow-2xl p-6 flex flex-col items-center justify-center gap-6 z-50"
             >
               <NavItem to="/">Inicio</NavItem>
               <NavItem to="/History">Historia</NavItem>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { hover, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 import img1 from "../assets/TimelineImg/fundacion.jpg";
 import img2 from "../assets/TimelineImg/IglesiaJesusNazareno_1.png";
 import img3 from "../assets/TimelineImg/IglesiaJesusNazareno_2.webp";
@@ -49,49 +49,42 @@ export default function Timeline() {
   return (
     <>
       <section className="  relative overflow-hidden">
-        {/* Título animado */}
-        <motion.h2 initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }} className="relative text-white text-xl md:text-3xl font-bold text-center mb-10 tracking-wide z-10 pt-10">
-          Línea de Tiempo
-        </motion.h2>
+       
+        {/* Línea vertical decorativa */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-[3px] h-full bg-gradient-to-b from-[#c9a227] via-[#b48a3e] to-[#5c3b09] opacity-80"></div>
 
-        <div className="relative max-w-6xl mx-auto">
-          {/* Línea central con gradiente animado */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full">
-            <div className="w-full h-full bg-gradient-to-b from-amber-100 via-orange-400 to-blue-500 animate-gradient-y"></div>
-          </div>
-
+        <div className="relative z-10 max-w-6xl mx-auto px-8">
           {timelineData.map((item, index) => (
-            <div key={index} className={`mb-16 flex items-center w-full ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
-              {/* Contenido */}
-              <div className="w-1/2 p-6 cursor-pointer transition transform hover:scale-105" onClick={() => setActive(index)}>
-                <div className={`bg-[#1e293b] rounded-xl shadow-lg p-5 transition duration-500 group ${active === index ? "ring-2 ring-yellow-400" : ""}`}>
-                  <h3 className="text-xl text-yellow-400 font-semibold">{item.period}</h3>
-                  <h4 className="text-2xl text-white mt-1">{item.title}</h4>
-                  <ul className="mt-3 text-gray-300 space-y-2 text-sm">
-                    {item.events.map((ev, i) => (
-                      <li key={i}>
-                        <span className="mr-1 text-yellow-400">•</span>
-                        {ev}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+            <div key={index} className={`mb-20 flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
+              {/* Tarjeta de texto */}
+              <motion.div onClick={() => setActive(index)} whileHover={{ scale: 1.03 }} className={`relative w-full md:w-1/2 bg-[#fff8ef]/90 backdrop-blur-sm border border-[#b48a3e]/50 rounded-2xl shadow-lg p-6 transition-all duration-500 ${active === index ? "ring-2 ring-[#c9a227]" : ""}`}>
+                <h3 className="text-amber-700 text-xl font-semibold">
+                  <i className="fa-solid fa-hourglass-half mr-2 text-amber-600"></i>
+                  {item.period}
+                </h3>
+                <h4 className="text-2xl text-[#5c3b09] mt-2 font-[Playfair_Display]">{item.title}</h4>
+                <ul className="mt-4 space-y-2 text-[#2c2a26] text-sm leading-relaxed">
+                  {item.events.map((ev, i) => (
+                    <li key={i}>
+                      <span className="text-[#b48a3e] mr-1">•</span>
+                      {ev}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
 
-              {/* Imagen */}
-              <div className="w-1/2 p-6">
-                <motion.img
-                  src={item.image}
-                  alt={item.title}
-                  initial={{ opacity: 0.5, scale: 0.9 }}
-                  animate={{
-                    opacity: active === index ? 1 : 0.6,
-                    scale: active === index ? 1 : 0.95,
-                  }}
-                  transition={{ duration: 0.6 }}
-                  className="rounded-lg shadow-lg object-cover h-60 w-full"
-                />
-              </div>
+              {/* Imagen asociada */}
+              <motion.img
+                src={item.image}
+                alt={item.title}
+                initial={{ opacity: 0.5, scale: 0.9 }}
+                animate={{
+                  opacity: active === index ? 1 : 0.7,
+                  scale: active === index ? 1 : 0.95,
+                }}
+                transition={{ duration: 0.6 }}
+                className="rounded-2xl shadow-xl border-[3px] border-[#b48a3e]/70 w-full md:w-1/2 h-64 object-cover"
+              />
             </div>
           ))}
         </div>
