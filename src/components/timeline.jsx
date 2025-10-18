@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import img1 from "../assets/TimelineImg/fundacion.jpg";
-import img2 from "../assets/TimelineImg/IglesiaJesusNazareno_1.png";
-import img3 from "../assets/TimelineImg/IglesiaJesusNazareno_2.webp";
-import img4 from "../assets/TimelineImg/IglesiaJesusNazareno_2.webp";
-import img5 from "../assets/TimelineImg/IglesiaJesusNazareno_2.webp";
+import img1 from "../assets/TimelineImg/img1.JPG";
+import img2 from "../assets/TimelineImg/img2.png";
+import img3 from "../assets/TimelineImg/img3.JPG";
+import img4 from "../assets/TimelineImg/img4.png";
+import img5 from "../assets/TimelineImg/img5.JPG";
 
 const timelineData = [
   {
@@ -15,7 +15,7 @@ const timelineData = [
       "1555: La Villa de Santafé de Antioquia se convierte en capital de la provincia, consolidándose como centro administrativo y religioso.",
       "1656: Un rayo destruye el primer templo parroquial.",
     ],
-    image: img1,
+    image: img2,
   },
   {
     period: "1659–1700",
@@ -24,7 +24,7 @@ const timelineData = [
       "1659: Se edifica un nuevo templo parroquial de tapias y tejas, que luego será demolido para dar paso a la Catedral actual.",
       "El estilo de estas construcciones era predominantemente colonial español: muros de adobe, tejas de barro y estructuras simples.",
     ],
-    image: img2,
+    image: img1,
   },
   {
     period: "Siglo XVIII",
@@ -113,7 +113,7 @@ export default function Timeline() {
                 scale: active === index ? 1 : 0.97,
               }}
               transition={{ duration: 0.6 }}
-              className="rounded-xl shadow-lg border border-[#9d7c48]/60 w-full md:w-1/2 h-64 object-cover sepia"
+              className="rounded-xl shadow-lg border border-[#9d7c48]/60 w-full md:w-1/2 h-64 object-cover "
             />
           </div>
         ))}

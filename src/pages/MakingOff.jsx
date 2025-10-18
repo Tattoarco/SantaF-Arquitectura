@@ -10,7 +10,7 @@ export default function MakingOff() {
       <img
         src={Periodico}
         alt="Textura de papel"
-        className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/70 via-[#0f172a]/80 to-[#0f172a]/95"></div>
 
