@@ -36,7 +36,7 @@ export default function Navbar() {
           <div className="flex gap-8 px-6 py-2 border border-amber-300/40 rounded-full bg-transparent backdrop-blur-0">
             <NavItem to="/">Inicio</NavItem>
             <NavItem to="/History">Historia</NavItem>
-            <NavItem to="/Proyecto">Proyecto</NavItem>
+            <NavItem to="/Proyect">Proyecto</NavItem>
             <NavItem to="/MakingOff">Making off</NavItem>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
             >
               <NavItem to="/">Inicio</NavItem>
               <NavItem to="/History">Historia</NavItem>
-              <NavItem to="/Proyecto">Proyecto</NavItem>
+              <NavItem to="/Proyect">Proyecto</NavItem>
               <NavItem to="/MakingOff">Making off</NavItem>
             </motion.div>
           </>

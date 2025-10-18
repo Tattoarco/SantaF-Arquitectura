@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 import Table from "../components/table";
 import Gallery from "../pages/Gallery";
 
