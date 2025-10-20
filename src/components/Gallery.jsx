@@ -2,14 +2,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import img1 from "../assets/ImgGallery/img1.jpg";
-import img2 from "../assets/ImgGallery/img2.jpg";
-import img3 from "../assets/ImgGallery/img3.jpg";
+import img1 from "../assets/ImgGallery/img1.JPG";
+import img2 from "../assets/ImgGallery/img2.JPG";
+import img3 from "../assets/ImgGallery/img3.JPG";
 import img4 from "../assets/ImgGallery/img4.png";
-import img5 from "../assets/ImgGallery/img5.jpg";
-import img6 from "../assets/ImgGallery/img6.jpg";
-import img7 from "../assets/ImgGallery/img7.jpg";
-import img8 from "../assets/ImgGallery/img8.jpg";
+import img5 from "../assets/ImgGallery/img5.JPG";
+import img6 from "../assets/ImgGallery/img6.JPG";
+import img7 from "../assets/ImgGallery/img7.JPG";
+import img8 from "../assets/ImgGallery/img8.JPG";
 
 const images = [
   {
