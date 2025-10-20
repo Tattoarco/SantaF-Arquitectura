@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import visitaderoImg from "../assets/ImgGallery/img7.JPG"; 
-import habiatacion from "../assets/habitacion.jpg";
+import habiatacion from "../assets/habitacion.JPG";
 
 export default function Proyect() {
   return (
