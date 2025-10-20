@@ -10,11 +10,6 @@ import papel from "../assets/casaHome.PNG";
 import imgInicio from "../assets/fondoHome.jpg";
 import fondo from "../assets/principal.jpg";
 
-import img1 from "../assets/ImgGallery/img1.jpg";
-import img2 from "../assets/ImgGallery/img2.jpg";
-import img3 from "../assets/ImgGallery/img3.jpg";
-import img4 from "../assets/ImgGallery/img4.jpg";
-
 export default function Home() {
   const [showMore, setShowMore] = useState(false);
   const location = useLocation();
@@ -24,41 +19,40 @@ export default function Home() {
   const rows = [
     {
       espacio_del_hogar: "Zaguán (entrada)",
-      uso_principal: "Recibir visitas, paso hacia el interior",
+      uso_principal: "Recibir visitas, tránsito entre lo público y lo doméstico",
       género_asociado: "Masculino / público",
-      "significado_social_/_simbólico": "Representa la apertura hacia la calle y el control masculino del acceso.",
-      transformación_actual: "Hoy se usa como espacio de recepción o galería abierta.",
+      "significado_social_/_simbólico": "Simbolizaba el control masculino del acceso al hogar y la vigilancia del contacto con el exterior.",
+      transformación_actual: "Hoy mantiene la función de recibidor, pero se percibe como un espacio neutro y abierto al tránsito.",
     },
     {
       espacio_del_hogar: "Patio central",
-      uso_principal: "Eje de ventilación y reunión familiar",
+      uso_principal: "Centro de ventilación, descanso y reunión familiar",
       género_asociado: "Femenino / doméstico",
-      "significado_social_/_simbólico": "Centro de la vida doméstica, asociado al cuidado, costura y crianza.",
-      transformación_actual: "Mantiene su valor simbólico de unión y frescura, ahora como espacio social.",
+      "significado_social_/_simbólico": "Era el corazón de la vida doméstica: trabajo, crianza, conversación femenina y cohesión familiar.",
+      transformación_actual: "Conserva su valor como lugar de encuentro, aunque es más compartido y menos jerarquizado.",
     },
     {
       espacio_del_hogar: "Sala principal",
-      uso_principal: "Reuniones sociales y representación del estatus familiar",
+      uso_principal: "Recibir visitas, actos sociales y exhibición del estatus",
       género_asociado: "Masculino / público",
-      "significado_social_/_simbólico": "Espacio donde se consolidaban jerarquías sociales y se negociaban alianzas.",
-      transformación_actual: "Actualmente funciona como área de convivencia o exhibición cultural.",
+      "significado_social_/_simbólico": "Representaba la autoridad del patriarca y la visibilidad de la familia en la esfera social.",
+      transformación_actual: "Se ha convertido en espacio de convivencia o múltiple uso, con menor carga jerárquica.",
     },
     {
       espacio_del_hogar: "Cocina y despensa",
       uso_principal: "Preparación de alimentos y gestión del hogar",
       género_asociado: "Femenino / laboral",
-      "significado_social_/_simbólico": "Lugar de transmisión de saberes culinarios y de interacción femenina.",
-      transformación_actual: "Hoy se integra al comedor y se percibe como espacio compartido y creativo.",
+      "significado_social_/_simbólico": "Lugar de saberes y tareas femeninas, central en la reproducción social y doméstica.",
+      transformación_actual: "Hoy se integra más al comedor o al espacio común, reflejando dinámicas más igualitarias.",
     },
     {
       espacio_del_hogar: "Habitaciones interiores",
       uso_principal: "Descanso, intimidad y crianza",
       género_asociado: "Femenino / privado",
-      "significado_social_/_simbólico": "Espacio de cuidado y refugio, restringido al visitante masculino.",
-      transformación_actual: "Se mantiene la privacidad, pero con una distribución más equitativa.",
+      "significado_social_/_simbólico": "Asociadas a la esfera privada, al cuidado, al recogimiento y al encierro simbólico femenino.",
+      transformación_actual: "Sigue siendo lugar de privacidad, pero el uso y su significado se han flexibilizado.",
     },
   ];
-
 
   useEffect(() => {
     if (location.state?.scrollTo) {
@@ -127,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* Galería */}
-      <div className="relative bg-[#0b1326]">
+      <div className=" bg-[#0b1326]">
         <Gallery />
       </div>
 
@@ -135,8 +129,15 @@ export default function Home() {
       <section className="relative bg-[#0b1326] pb-10 px-10 md:px-32 pt-12">
         <motion.h2 className="text-3xl font-[Playfair_Display] text-center text-[#f1c232] mb-8" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           <i className="fa-solid fa-venus-mars mr-2"></i>
-          Roles de género en el hogar colonial
+          Roles de género en el hogar
         </motion.h2>
+        <div className="text-justify flex flex-col gap-y-5 mb-2">
+          <p>
+            La configuración del hogar de la élite en la época colonial y decimonónica en ciudades como Santa Fe de Antioquia (y por extensión en ámbitos similares de la región) revela cómo el espacio doméstico participaba de las jerarquías de género y de las relaciones de poder. Como señalan Suzy Bermúdez y Diana Urbano, en su artículo “Los espacios en los hogares de la élite santafereña en el
+            siglo XIX desde una perspectiva de género”, los distintos recintos del hogar no eran neutros: estaban asociados a usos, roles y valores que reforzaban la distinción entre lo público–masculino y lo doméstico–femenino.
+          </p>
+          <p>La siguiente tabla sintetiza cinco espacios clave del hogar tradicional, su uso, el género asociado, su significado simbólico y cómo han sido reinterpretados en el presente.</p>
+        </div>
         <motion.div className="bg-[#111c35]/70 backdrop-blur-md border border-[#f1c232]/40 p-6 rounded-2xl shadow-lg" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1.2 }}>
           <Table columns={columns} data={rows} />
         </motion.div>

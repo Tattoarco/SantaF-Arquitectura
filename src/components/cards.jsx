@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import { Info } from "lucide-react";
 
-export default function Card({ titulo, parrafos, img, referencias }) {
+export default function Card({ titulo, parrafos, img, referencias, audios }) {
   return (
     <section className="w-full border-2 border-amber-400/30 rounded-2xl p-4 bg-[#0b1326]/60 backdrop-blur-md shadow-lg relative">
       {/* Título */}
-      <h2 className="text-2xl md:text-3xl font-[Playfair_Display] mb-4 text-amber-300 text-center">
+      <h2 className="text-xl md:text-2xl font-[Playfair_Display] mb-4 text-amber-300 text-center">
         {titulo}
       </h2>
 
@@ -25,6 +25,26 @@ export default function Card({ titulo, parrafos, img, referencias }) {
           : <p>{parrafos}</p>}
       </article>
 
+      {/* Audios (opcional) */}
+      {audios && audios.length > 0 && (
+        <div className="mt-6 space-y-4">
+          <h3 className="text-lg text-amber-300 font-[Playfair_Display] text-center">
+            Entrevistas sobre la construcción santafereña
+          </h3>
+          {audios.map((audio, i) => (
+            <div key={i} className="flex flex-col items-center">
+              <p className="text-sm italic text-gray-300 mb-2 text-center">
+                {audio.descripcion}
+              </p>
+              <audio controls className="w-full md:w-3/4 rounded-lg">
+                <source src={audio.src} type="audio/mpeg" />
+                Tu navegador no soporta la reproducción de audio.
+              </audio>
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Tooltip de referencias */}
       {referencias && (
         <div className="mt-4 flex justify-start">
@@ -33,7 +53,7 @@ export default function Card({ titulo, parrafos, img, referencias }) {
             <span>Ver fuente</span>
 
             {/* Tooltip */}
-            <div className="absolute bottom-full mb-2 hidden group-hover:block  bg-black text-white text-xs p-2 rounded-lg shadow-md text-left z-10">
+            <div className="absolute bottom-full mb-2 hidden group-hover:block bg-black text-white text-xs p-2 rounded-lg shadow-md text-left z-10">
               {referencias}
             </div>
           </div>
@@ -51,4 +71,10 @@ Card.propTypes = {
   ]).isRequired,
   img: PropTypes.string,
   referencias: PropTypes.string,
+  audios: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      descripcion: PropTypes.string,
+    })
+  ),
 };

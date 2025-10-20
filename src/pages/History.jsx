@@ -10,6 +10,10 @@ import CasaBareque from "../assets/ImgHistory/CasaBareque.JPG"
 import CasaDecoraciones from "../assets/ImgHistory/CasaDecoraciones.JPG"
 import CasaMadera from "../assets/ImgHistory/CasaMadera.JPG"
 
+import entrevista1 from "../assets/Audios/Primera entrevista_1.opus"
+import entrevista2 from "../assets/Audios/Primera entrevista_2.mp3"
+
+
 export default function History() {
   return (
     <section className="bg-gradient-to-b from-[#0a1123] to-[#111827] text-white overflow-hidden">
@@ -95,6 +99,24 @@ export default function History() {
             parrafos={["Los basamentos, zócalos o muros de sostén a veces empleaban piedra (o mampostería de piedra) por su resistencia y durabilidad.", "Para los acabados de los muros de tapia o bahareque, se usaban mezclas orgánicas (por ejemplo: tierra, estiércol, paja) cubiertas posteriormente con cal o yeso para dar blancura, luminosidad y proteger del clima."]}
             referencias="Fuente: https://es.scribd.com/document/457790963/MATERIALES-Y-TECNICAS-CONSTRUCTIVAS?"
           />
+
+          <Card
+      titulo="Tradición constructiva santafereña"
+      parrafos={[
+        "En estas entrevistas, los habitantes relatan las técnicas tradicionales de construcción en Santa Fe de Antioquia, destacando el uso del tapial, la cal y la teja de barro.",
+        "Los testimonios también muestran cómo la mano de obra local y el conocimiento empírico fueron esenciales en la preservación de la arquitectura colonial.",
+      ]}
+      audios={[
+        {
+          src: entrevista1,
+          descripcion: "Entrevista 1",
+        },
+        {
+          src: entrevista2,
+          descripcion: "Entrevista 2",
+        },
+      ]}
+    />
         </div>
       </motion.section>
 
