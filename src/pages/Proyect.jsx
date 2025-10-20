@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import visitaderoImg from "../assets/ImgGallery/img7.jpg"; 
+import visitaderoImg from "../assets/ImgGallery/img7.JPG"; 
 import habiatacion from "../assets/habitacion.jpg";
 
 export default function Proyect() {
