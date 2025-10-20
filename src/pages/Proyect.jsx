@@ -1,77 +1,60 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import visitaderoImg from "../assets/ImgGallery/img7.jpg"; // 👈 reemplaza con la imagen real del visitadero
+import visitaderoImg from "../assets/ImgGallery/img7.jpg"; 
+import habiatacion from "../assets/habitacion.jpg";
 
 export default function Proyect() {
   return (
     <>
       {/* ENCABEZADO PRINCIPAL */}
-      <section className="relative bg-gradient-to-b from-[#0a1123] to-[#111827] text-white overflow-hidden min-h-screen">
+      <section
+        className="relative text-white overflow-hidden min-h-screen flex flex-col justify-center items-center bg-fixed bg-center bg-cover"
+        style={{
+          backgroundImage: `url(${habiatacion})`,
+        }}
+      >
+        {/* Capa oscura */}
+        <div className="absolute inset-0 bg-[#0a1123]/70 backdrop-blur-[2px]" />
+
+        {/* Navbar */}
         <Navbar />
 
+        {/* Contenido principal */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-40 pb-24">
           <motion.h1
-            className="text-5xl md:text-6xl font-[Playfair_Display] text-[#f1c232] tracking-widest uppercase drop-shadow-lg"
+            className="text-5xl md:text-6xl font-[Playfair_Display] text-[#f1c232] tracking-widest uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
             Ecos del Visitadero
           </motion.h1>
+
           <motion.p
-            className="mt-6 max-w-3xl text-gray-300 italic text-lg leading-relaxed"
+            className="mt-10 max-w-3xl text-gray-200 italic text-lg leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 1 }}
+            transition={{ delay: 0.8, duration: 1 }}
           >
             Una experiencia inmersiva que revive las emociones, silencios y miradas
             que habitan los espacios coloniales de Santa Fe de Antioquia.
           </motion.p>
+
           <motion.p
-            className="mt-6 max-w-3xl text-gray-300 italic text-lg leading-relaxed"
+            className="mt-4 max-w-3xl text-gray-300 italic text-lg leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 1 }}
+            transition={{ delay: 1, duration: 1 }}
           >
-            Sigue en creación pero puedes leer más abajo
+            Sigue en creación, pero puedes leer más abajo
           </motion.p>
         </div>
-
-        <div className="absolute inset-0 bg-[url('/texture-paper.webp')] opacity-5" />
       </section>
 
       {/* SECCIÓN: INTRODUCCIÓN */}
-      <section className="relative bg-[#0b1326] py-20 px-6 md:px-32 border-t border-[#f1c232]/30">
-        <motion.div
-          className="max-w-5xl mx-auto bg-[#111c35]/40 backdrop-blur-md rounded-2xl p-10 shadow-xl border border-[#f1c232]/40"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-[Playfair_Display] text-[#f1c232] text-center mb-8">
-            Introducción
-          </h2>
-          <p className="text-gray-200 text-justify leading-relaxed">
-            Este proyecto nace del deseo de comprender el{" "}
-            <span className="text-[#f1c232] font-semibold">habitar santafereño</span>
-            desde una perspectiva emocional y simbólica. Inspirados en la
-            arquitectura colonial de Santa Fe de Antioquia, buscamos recrear la
-            esencia de los espacios que guardan las memorias, costumbres y
-            sentimientos de quienes los vivieron.
-          </p>
-          <p className="mt-4 text-gray-200 text-justify leading-relaxed">
-            Nuestra historia, escrita por nosotros mismos, se construye a partir
-            de los sentimientos que puede evocar el{" "}
-            <span className="italic text-[#f1c232]">visitadero</span>: ese umbral
-            entre lo íntimo y lo público, donde el silencio, la distancia y la
-            mirada se vuelven protagonistas.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* SECCIÓN: NARRATIVA DEL VISITADERO */}
-      <section className="relative bg-[#111c35]/80 py-20 px-6 md:px-24 border-t border-[#f1c232]/20 flex flex-col md:flex-row gap-10 items-center">
+      <section className="relative bg-[#0b1326] py-20 px-6 md:px-32 border-t border-[#f1c232]/30 flex flex-col md:flex-row gap-10 items-center">
+        {/* Imagen del texto introductorio */}
         <motion.img
           src={visitaderoImg}
           alt="Visitadero santafereño"
@@ -81,25 +64,30 @@ export default function Proyect() {
           transition={{ duration: 1 }}
         />
 
+        {/* Texto */}
         <motion.div
           className="md:w-1/2 text-gray-200 leading-relaxed"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-3xl font-[Playfair_Display] text-[#f1c232] mb-4">
-            El Visitadero: entre el adentro y el afuera
+          <h2 className="text-3xl md:text-4xl font-[Playfair_Display] text-[#f1c232] mb-6 text-center md:text-left">
+            Introducción
           </h2>
           <p className="text-justify">
-            Este elemento arquitectónico, presente en muchas casas coloniales,
-            se convierte en el punto de encuentro entre dos mundos: el interior
-            doméstico y el bullicio de la calle. En el visitadero, las palabras
-            se murmuran, las miradas se cruzan y las emociones se reprimen.
+            Este proyecto nace del deseo de comprender el{" "}
+            <span className="text-[#f1c232] font-semibold">habitar santafereño</span>{" "}
+            desde una perspectiva emocional y simbólica. Inspirados en la
+            arquitectura colonial de Santa Fe de Antioquia, buscamos recrear la
+            esencia de los espacios que guardan las memorias, costumbres y
+            sentimientos de quienes los vivieron.
           </p>
           <p className="mt-4 text-justify">
-            A través de nuestra historia, recreamos un diálogo silencioso entre
-            los personajes que se asoman al umbral, conectando con las tensiones
-            sociales y afectivas que definieron el habitar colonial.
+            Nuestra historia, escrita por nosotros mismos, se construye a partir
+            de los sentimientos que puede evocar el{" "}
+            <span className="italic text-[#f1c232]">visitadero</span>: ese umbral
+            entre lo íntimo y lo público, donde el silencio, la distancia y la
+            mirada se vuelven protagonistas.
           </p>
         </motion.div>
       </section>
@@ -142,8 +130,7 @@ export default function Proyect() {
                 Antonio
               </h3>
               <p className="text-gray-300 text-sm">
-                Simboliza la mirada exterior, la distancia y la restricción
-                social del vínculo.
+                Simboliza la mirada exterior, la distancia y la restricción social del vínculo.
               </p>
             </div>
 
@@ -160,32 +147,6 @@ export default function Proyect() {
               </p>
             </div>
           </div>
-        </motion.div>
-      </section>
-
-      {/* SECCIÓN: EXPERIENCIA VR */}
-      <section className="relative bg-[#111c35]/80 py-20 px-6 md:px-32 border-t border-[#f1c232]/30">
-        <motion.div
-          className="max-w-5xl mx-auto text-center"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <h2 className="text-3xl font-[Playfair_Display] text-[#f1c232] mb-6">
-            Realidad virtual y memoria sensorial
-          </h2>
-          <p className="text-gray-200 leading-relaxed max-w-4xl mx-auto">
-            La propuesta se materializa en una{" "}
-            <span className="text-[#f1c232] font-semibold">
-              experiencia inmersiva en realidad virtual
-            </span>, donde los visitantes podrán recorrer el interior de una casa
-            colonial santafereña y descubrir los recuerdos escondidos en el
-            visitadero.
-          </p>
-          <p className="mt-4 text-gray-200 leading-relaxed max-w-4xl mx-auto italic">
-            A través de la voz, la luz y el sonido, la casa cobra vida, invitando
-            a reflexionar sobre cómo los espacios también sienten.
-          </p>
         </motion.div>
       </section>
 
