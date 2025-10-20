@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import img1 from "../assets/ImgGallery/img1.JPG";
-import img2 from "../assets/ImgGallery/img2.JPG";
+import img2 from "../assets/ImgGallery/img2.jpg";
 import img3 from "../assets/ImgGallery/img3.JPG";
 import img4 from "../assets/ImgGallery/img4.png";
 import img5 from "../assets/ImgGallery/img5.JPG";
