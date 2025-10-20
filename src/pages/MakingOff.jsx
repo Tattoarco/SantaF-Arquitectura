@@ -36,7 +36,7 @@ export default function MakingOff() {
           Detrás de cámaras: el proceso creativo, la historia y la pasión que dieron vida al proyecto.
         </motion.p>
       </header>
-
+      
       {/* Contenido principal */}
       <main className="relative z-10 flex flex-col items-center py-16 px-6">
         <motion.div
@@ -52,7 +52,7 @@ export default function MakingOff() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/IbSc5XypHxk?si=aCETueO7H5-MtyzJ"
               title="Video Making Off"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
